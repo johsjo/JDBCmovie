@@ -8,7 +8,7 @@ import se.johsjo.jdbcmovie.model.Movie;
 import se.johsjo.jdbcmovie.model.Review;
 import se.johsjo.jdbcmovie.model.ReviewUser;
 
-public interface MovieRepository {
+public interface MovieRepositoryImpl {
 
 	Object saveMovieObject(Object obj);
 

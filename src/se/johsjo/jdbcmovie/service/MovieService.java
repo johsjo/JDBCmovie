@@ -3,12 +3,12 @@ package se.johsjo.jdbcmovie.service;
 import java.util.List;
 
 import se.johsjo.jdbcmovie.model.*;
-import se.johsjo.jdbcmovie.repository.MovieRepository;
+import se.johsjo.jdbcmovie.repository.MovieRepositoryImpl;
 
 public class MovieService {
-	MovieRepository movieRepository;
+	MovieRepositoryImpl movieRepository;
 
-	public MovieService(MovieRepository movieRepository) {
+	public MovieService(MovieRepositoryImpl movieRepository) {
 		this.movieRepository = movieRepository;
 	}
 
