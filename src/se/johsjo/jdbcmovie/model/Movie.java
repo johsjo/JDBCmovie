@@ -1,6 +1,6 @@
 package se.johsjo.jdbcmovie.model;
 
-public class Movie {
+public final class Movie {
 	private int id;
 	private String title;
 	private String production_year;

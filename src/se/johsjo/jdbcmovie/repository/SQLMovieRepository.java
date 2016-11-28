@@ -6,7 +6,7 @@ import java.util.List;
 
 import se.johsjo.jdbcmovie.model.*;
 
-public class SQLMovieRepository implements MovieRepository {
+public final class SQLMovieRepository implements MovieRepository {
 	private static final String CONNECTION_URL = "jdbc:mysql://localhost/MovieDatabase?useSSL=false";
 
 	private static final String SAVE_MOVIES = "INSERT INTO Movies VALUES (null , ? , ? , ? )";

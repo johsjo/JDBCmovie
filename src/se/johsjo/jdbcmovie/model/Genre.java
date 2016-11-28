@@ -1,6 +1,6 @@
 package se.johsjo.jdbcmovie.model;
 
-public class Genre {
+public final class Genre {
 	int id;
 	String genre;
 
