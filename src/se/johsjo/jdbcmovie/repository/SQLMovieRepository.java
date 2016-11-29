@@ -96,8 +96,7 @@ public final class SQLMovieRepository implements MovieRepositoryImpl {
 
 	}
 
-	//// SELECTERS
-
+	//// SELECTES
 	@Override
 	public List<Movie> getMovies() {
 
@@ -157,7 +156,7 @@ public final class SQLMovieRepository implements MovieRepositoryImpl {
 	}
 
 	@Override
-	public List<Genre> getGenre() {
+	public List<Genre> getGenres() {
 		ArrayList<Genre> resultList = new ArrayList<>();
 
 		try (Connection connection = DriverManager.getConnection(CONNECTION_URL, "root", "mysql");
@@ -230,6 +229,7 @@ public final class SQLMovieRepository implements MovieRepositoryImpl {
 		return null;
 	}
 
+	//DELETE method
 	private static final String REMOVE_A_MOVIE = "DELETE FROM Movies WHERE id = ?";
 	private static final String REMOVE_AN_ACTOR = "DELETE FROM Actors WHERE id = ?";
 	private static final String REMOVE_A_GENRE = "DELETE FROM Genre WHERE id = ?";
@@ -240,27 +240,27 @@ public final class SQLMovieRepository implements MovieRepositoryImpl {
 	public int deleteObject(Object obj) {
 
 		if (obj instanceof Movie) {
-			int result = remove(((Movie) obj).getId(), REMOVE_A_MOVIE);
+			int result = delete(((Movie) obj).getId(), REMOVE_A_MOVIE);
 			if (result > 0) {
 				return result;
 			}
 		} else if (obj instanceof Actor) {
-			int result = remove(((Actor) obj).getId(), REMOVE_AN_ACTOR);
+			int result = delete(((Actor) obj).getId(), REMOVE_AN_ACTOR);
 			if (result > 0) {
 				return result;
 			}
 		} else if (obj instanceof Genre) {
-			int result = remove(((Genre) obj).getId(), REMOVE_A_GENRE);
+			int result = delete(((Genre) obj).getId(), REMOVE_A_GENRE);
 			if (result > 0) {
 				return result;
 			}
 		} else if (obj instanceof Review) {
-			int result = remove(((Genre) obj).getId(), REMOVE_A_REVIEW);
+			int result = delete(((Genre) obj).getId(), REMOVE_A_REVIEW);
 			if (result > 0) {
 				return result;
 			}
 		} else if (obj instanceof ReviewUser) {
-			int result = remove(((Genre) obj).getId(), REMOVE_A_REVIEWUSER);
+			int result = delete(((Genre) obj).getId(), REMOVE_A_REVIEWUSER);
 			if (result > 0) {
 				return result;
 			}
@@ -270,7 +270,7 @@ public final class SQLMovieRepository implements MovieRepositoryImpl {
 
 	}
 
-	private int remove(int id, String query) {
+	private int delete(int id, String query) {
 		try (Connection connection = DriverManager.getConnection(CONNECTION_URL, "root", "mysql")) {
 
 			connection.setAutoCommit(false);

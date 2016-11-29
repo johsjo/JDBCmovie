@@ -25,7 +25,7 @@ public class MovieService {
 	}
 
 	public List<Genre> getGenre() {
-		return movieRepository.getGenre();
+		return movieRepository.getGenres();
 	}
 
 	public List<Review> getReviews() {

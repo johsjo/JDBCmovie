@@ -5,7 +5,6 @@ public final class Genre {
 	String genre;
 
 	public Genre(int id, String genre) {
-		super();
 		this.id = id;
 		this.genre = genre;
 	}

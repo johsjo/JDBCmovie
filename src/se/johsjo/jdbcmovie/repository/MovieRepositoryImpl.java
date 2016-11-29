@@ -16,7 +16,7 @@ public interface MovieRepositoryImpl {
 
 	List<Actor> getActors();
 
-	List<Genre> getGenre();
+	List<Genre> getGenres();
 
 	List<Review> getReviews();
 
